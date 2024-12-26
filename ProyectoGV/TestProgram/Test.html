@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Dividido en Secciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Formulario Dividido en Secciones</h2>
+        <form id="formulario-dividido">
+            <!-- Sección Viaje -->
+            <div class="section">
+                <h3>Viaje</h3>
+                <div class="form-group">
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+                <div class="form-group">
+                    <label for="motivo">Motivo del viaje:</label>
+                    <input type="text" id="motivo" name="motivo" required>
+                </div>
+            </div>
+            <!-- Sección Unidades -->
+            <div class="section">
+                <h3>Unidades</h3>
+                <div class="form-group">
+                    <label for="unidadPlaca">Unidad / Placa:</label>
+                    <select id="unidadPlaca" name="unidadPlaca" required></select>
+                </div>
+            </div>
+            <!-- Sección Ruta y Paradas -->
+            <div class="section">
+                <h3>Ruta y Paradas</h3>
+                <div class="form-group">
+                    <label for="ruta">Ruta:</label>
+                    <textarea id="ruta" name="ruta" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="paradas">Paradas Programadas:</label>
+                    <input type="text" id="paradas" name="paradas" required>
+                </div>
+            </div>
+            <!-- Sección Evaluación de Riesgo -->
+            <div class="section">
+                <h3>Evaluación de Riesgo</h3>
+                <div class="form-group">
+                    <label for="kilometraje">Kilometraje recorrido:</label>
+                    <select id="kilometraje" name="kilometraje"></select>
+                </div>
+                <div class="form-group">
+                    <label for="clima">Condiciones Climáticas:</label>
+                    <select id="clima" name="clima"></select>
+                </div>
+            </div>
+            <button type="button" onclick="procesarFormulario()">Procesar</button>
+        </form>
+        <div id="resultado"></div>
+    </div>
+    <script src="datos.js"></script>
+    <script src="formulario.js"></script>
+</body>
+</html>

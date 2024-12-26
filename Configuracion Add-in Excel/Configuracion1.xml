@@ -1,0 +1,63 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+    <ribbon startFromScratch="false">
+        <tabs>
+            <tab id="customTab" label="Custom Tab">
+                <group id="customGroup" label="Custom Group">
+                    <dropDown id="customDropDown" label="Custom DropDown" onAction="DropDownAction" getSelectedItemIndex="GetSelectedItemIndex">
+                        <item id="option1" label="Option 1" />
+                        <item id="option2" label="Option 2" />
+                        <item id="option3" label="Option 3" />
+                    </dropDown>
+                </group>
+            </tab>
+        </tabs>
+    </ribbon>
+</customUI>
+
+
+Dim selectedItemIndex As Integer
+
+' Callback para manejar la acción del dropDown
+Sub DropDownAction(control As IRibbonControl, id As String, index As Integer)
+    selectedItemIndex = index
+    Select Case id
+        Case "option1"
+            MsgBox "Option 1 selected!"
+        Case "option2"
+            MsgBox "Option 2 selected!"
+        Case "option3"
+            MsgBox "Option 3 selected!"
+    End Select
+End Sub
+
+' Callback para obtener el índice del ítem seleccionado
+Sub GetSelectedItemIndex(control As IRibbonControl, ByRef index As Integer)
+    index = selectedItemIndex
+End Sub
+
+
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+    <ribbon startFromScratch="false">
+        <tabs>
+            <tab id="customTab" label="Custom Tab">
+                <group id="customGroup" label="Custom Group">
+                    <gallery id="customGallery" label="Custom Gallery" imageMso="HappyFace" size="large" onAction="GalleryAction">
+                        <item id="option1" label="Option 1" imageMso="SmileyFace"/>
+                        <item id="option2" label="Option 2" imageMso="SadFace"/>
+                        <item id="option3" label="Option 3" imageMso="HappyFace"/>
+                    </gallery>
+                </group>
+            </tab>
+        </tabs>
+    </ribbon>
+</customUI>
+Sub GalleryAction(control As IRibbonControl, id As String, index As Integer)
+    Select Case id
+        Case "option1"
+            MsgBox "Option 1 selected!"
+        Case "option2"
+            MsgBox "Option 2 selected!"
+        Case "option3"
+            MsgBox "Option 3 selected!"
+    End Select
+End Sub
