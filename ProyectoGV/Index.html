@@ -50,21 +50,8 @@
                 
                 <div class="form-group">
                     <label for="unidadPlaca">Unidad / Placa:</label>
-
-                    <select id="unidadPlaca" name="unidadPlaca" onchange="mostrarCampoPersonalizado()" required>
-                        <option value="Fortuner AA179EI">Fortuner (AA179EI)</option>
-                        <option value="Hilux (91WNAF)">Hilux 91WNAF</option>
-                        <option value="Tacoma CC357IJ">Tacoma CC357IJ</option>
-                        <option value="personalizado">Escribir otra...</option>
-                    </select>
-
-                    <input 
-                        type="text" 
-                        id="unidadPlacaPersonalizada" 
-                        name="unidadPlacaPersonalizada" 
-                        placeholder="Ingresa la unidad personalizada" 
-                        style="display:none;"
-                    >
+                    <select id="unidadPlaca" name="unidadPlaca" onchange="mostrarCampoPersonalizado()" required></select>
+                    <input type="text" id="unidadPlacaPersonalizada" name="unidadPlacaPersonalizada" placeholder="Ingresa la unidad personalizada" style="display:none;">
                 </div>
                 
                 <div class="form-group">
@@ -79,10 +66,7 @@
 
                 <div class="form-group">
                     <label for="ruta">RUTA:</label>
-                    <textarea 
-                        id="ruta" 
-                        name="ruta" 
-                        rows="3" 
+                    <textarea id="ruta" name="ruta" rows="3" 
                         required>Maturín - El Furrial - Punta de Mata - Santa Barbara - Aguasay - San Tome - San Jose de Guanipa</textarea>
                 </div>
 

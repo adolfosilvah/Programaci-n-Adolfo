@@ -1,3 +1,10 @@
+var opcionesUnidadPlaca = {
+"Fortuner AA179EI": "Fortuner AA179EI",
+"Hilux (91WNAF)" : "Hilux (91WNAF)",
+"Tacoma CC357IJ" : "Tacoma CC357IJ",
+"personalizado" : "Escribir otra..."
+}
+
 var opcionesKilometraje = {
     "1": "Menos de 50km - 1 pts",
     "2": "Menos de 100km - 2 pts",

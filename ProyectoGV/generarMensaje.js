@@ -8,7 +8,13 @@ function generarInforme() {
     var lugarDestino = document.getElementById("lugarDestino").value;
     var horaSalida = document.getElementById("horaSalida").value;
     var horaLlegada = document.getElementById("horaLlegada").value;
-    var unidadPlaca = document.getElementById("unidadPlaca").value;
+
+    if (document.getElementById("unidadPlaca").value === "personalizado") {
+        var unidadPlaca = document.getElementById("unidadPlacaPersonalizada").value;
+    } else {
+        var unidadPlaca = document.getElementById("unidadPlaca").value;
+    }
+    
     var conductores = document.getElementById("conductores").value;
     var acompanantes = document.getElementById("acompanantes").value;
     var ruta = document.getElementById("ruta").value;

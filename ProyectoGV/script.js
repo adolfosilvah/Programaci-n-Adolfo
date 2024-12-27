@@ -50,13 +50,13 @@ function mostrarCampoPersonalizado() {
     if (ElementoSeleccionado.value === "personalizado") {
         ElementoEntrada.style.display = "block";
         ElementoEntrada.required = true;
-        ElementoSeleccionado.name = "";
-        ElementoEntrada.name = "unidadPlaca";
+        //ElementoSeleccionado.name = "";
+        //ElementoEntrada.name = "unidadPlaca";
     } else {
         ElementoEntrada.style.display = "none";
         ElementoEntrada.required = false;
-        ElementoSeleccionado.name = "unidadPlaca";
-        ElementoEntrada.name = "unidadPlacaPersonalizada";
+        //ElementoSeleccionado.name = "unidadPlaca";
+        //ElementoEntrada.name = "unidadPlacaPersonalizada";
         ElementoEntrada.value = ""; // Limpiar el campo de texto al seleccionar otra opción
     }
 }
@@ -72,5 +72,6 @@ window.onload = function() {
     generarOpciones("horas", opcionesHorasConduccion, "1"); // Preseleccionar "Horas trabajadas + horas de viaje <12 - 1 pts"
     generarOpciones("riesgo", opcionesRiesgo, "5"); // Preseleccionar "Alto - 5 pts"
     generarOpciones("horasViaje", opcionesHorasViaje, "1"); // Preseleccionar "Diurno entre 5:00 y 18:00 - 1 pts"
+    generarOpciones("unidadPlaca", opcionesUnidadPlaca, "Fortuner AA179EI");
 };
 
