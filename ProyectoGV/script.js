@@ -1,8 +1,8 @@
 function generarOpciones(selectId, opciones, valorPredeterminado) {
-    var selectElement = document.getElementById(selectId);
+    var ElementoSeleccionado = document.getElementById(selectId);
 
     // Limpiar opciones existentes
-    selectElement.innerHTML = "";
+    ElementoSeleccionado.innerHTML = "";
 
     // Generar nuevas opciones a partir del diccionario
     for (var valor in opciones) {
@@ -12,7 +12,7 @@ function generarOpciones(selectId, opciones, valorPredeterminado) {
         if (valor === valorPredeterminado) {
             opcion.selected = true;
         }
-        selectElement.appendChild(opcion);
+        ElementoSeleccionado.appendChild(opcion);
     }
 }
 
@@ -44,20 +44,20 @@ function formatoFechaParaMensaje(fecha) {
 }
 
 function mostrarCampoPersonalizado() {
-    var selectElement = document.getElementById("unidadPlaca");
-    var inputElement = document.getElementById("unidadPlacaPersonalizada");
+    var ElementoSeleccionado = document.getElementById("unidadPlaca");
+    var ElementoEntrada = document.getElementById("unidadPlacaPersonalizada");
 
-    if (selectElement.value === "personalizado") {
-        inputElement.style.display = "block";
-        inputElement.required = true;
-        selectElement.name = "";
-        inputElement.name = "unidadPlaca";
+    if (ElementoSeleccionado.value === "personalizado") {
+        ElementoEntrada.style.display = "block";
+        ElementoEntrada.required = true;
+        ElementoSeleccionado.name = "";
+        ElementoEntrada.name = "unidadPlaca";
     } else {
-        inputElement.style.display = "none";
-        inputElement.required = false;
-        selectElement.name = "unidadPlaca";
-        inputElement.name = "unidadPlacaPersonalizada";
-        inputElement.value = ""; // Limpiar el campo de texto al seleccionar otra opción
+        ElementoEntrada.style.display = "none";
+        ElementoEntrada.required = false;
+        ElementoSeleccionado.name = "unidadPlaca";
+        ElementoEntrada.name = "unidadPlacaPersonalizada";
+        ElementoEntrada.value = ""; // Limpiar el campo de texto al seleccionar otra opción
     }
 }
 

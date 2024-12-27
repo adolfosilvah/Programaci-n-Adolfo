@@ -1,128 +1,149 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador de Informes GV</title>
-    <link rel="stylesheet" href="styles.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Generador de Mensajes GV</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
-<body>
-    <div class="container">
-        <h2>Generador de Mensajes GV</h2>
-        <form id="gv-form">
-            <!-- Sección de Información del Viaje -->
-            <div class="form-group">
-                <label for="fecha">Fecha:</label>
-                <input type="date" id="fecha" name="fecha" required>
-            </div>
-            <div class="form-group">
-                <label for="departamento">Departamento/Línea:</label>
-                <input type="text" id="departamento" name="departamento" value="Wireline" required>
-            </div>
-            <div class="form-group">
-                <label for="motivo">Motivo del viaje:</label>
-                <input type="text" id="motivo" name="motivo" value="Actividades WL" required>
-            </div>
-            <div class="form-group">
-                <label for="lugarSalida">Lugar de salida:</label>
-                <input type="text" id="lugarSalida" name="lugarSalida" value="Maturín" required>
-            </div>
-            <div class="form-group">
-                <label for="lugarDestino">Lugar Destino:</label>
-                <input type="text" id="lugarDestino" name="lugarDestino" value="El Tigre" required>
-            </div>
-            <div class="form-group">
-                <label for="horaSalida">Hora de salida:</label>
-                <input type="time" id="horaSalida" name="horaSalida" required>
-            </div>
-            <div class="form-group">
-                <label for="horaLlegada">Hora de llegada:</label>
-                <input type="time" id="horaLlegada" name="horaLlegada" required>
-            </div>
-            <div class="form-group">
-                <label for="unidadPlaca">Unidad / Placa:</label>
-                <select id="unidadPlaca" name="unidadPlaca" onchange="mostrarCampoPersonalizado()" required>
-                    <option value="Fortuner AA179EI">Fortuner (AA179EI)</option>
-                    <option value="Hilux (91WNAF)">Hilux 91WNAF</option>
-                    <option value="Tacoma CC357IJ">Tacoma CC357IJ</option>
-                    <option value="personalizado">Escribir otra...</option>
-                </select>
-                <input 
-                    type="text" 
-                    id="unidadPlacaPersonalizada" 
-                    name="unidadPlacaPersonalizada" 
-                    placeholder="Ingresa la unidad personalizada" 
-                    style="display:none;"
-                >
-            </div>
+    <body> 
+        <div class="container">
+            <h1>Generador de Mensajes GV</h1>
             
-            <div class="form-group">
-                <label for="conductores">Conductor/es:</label>
-                <input type="text" id="conductores" name="conductores" value="Adolfo Silva" required>
-            </div>
-            <div class="form-group">
-                <label for="acompanantes">Acompañantes:</label>
-                <input type="text" id="acompanantes" name="acompanantes" value="Roybert Arcia" required>
-            </div>
-            <div class="form-group">
-                <label for="ruta">RUTA:</label>
-                <textarea 
-                    id="ruta" 
-                    name="ruta" 
-                    rows="3" 
-                    required>Maturín - El Furrial - Punta de Mata - Santa Barbara - Aguasay - San Tome - San Jose de Guanipa</textarea>
-            </div>
-            <div class="form-group">
-                <label for="paradas">PARADAS PROGRAMADAS:</label>
-                <input type="text" id="paradas" name="paradas" value="Ninguna" required>
-            </div>
+            <form id="gv-form">
+                <!-- Sección de Información del Viaje -->
 
-            <!-- Sección de Evaluación de Riesgo -->
-            <h3>EVALUACIÓN DE RIESGO</h3>
-            <div class="form-group">
-                <label for="kilometraje">Kilometraje recorrido:</label>
-                <select id="kilometraje" name="kilometraje"></select>
-            </div>
-            <div class="form-group">
-                <label for="clima">Condiciones Climáticas:</label>
-                <select id="clima" name="clima"></select>
-            </div>
-            <div class="form-group">
-                <label for="vehiculos">Vehículos más pasajeros:</label>
-                <select id="vehiculos" name="vehiculos"></select>
-            </div>
-            <div class="form-group">
-                <label for="vias">Condiciones de las vías:</label>
-                <select id="vias" name="vias"></select>
-            </div>
-            <div class="form-group">
-                <label for="comunicacion">Comunicación disponible:</label>
-                <select id="comunicacion" name="comunicacion"></select>
-            </div>
-            <div class="form-group">
-                <label for="horas">Horas trabajadas más tiempo de viaje:</label>
-                <select id="horas" name="horas"></select>
-            </div>
-            <div class="form-group">
-                <label for="riesgo">Riesgo seguridad física del viaje:</label>
-                <select id="riesgo" name="riesgo"></select>
-            </div>
-            <div class="form-group">
-                <label for="horasViaje">Horas del viaje (Diurna o Nocturna):</label>
-                <select id="horasViaje" name="horasViaje"></select>
-            </div>
+                <div class="form-group">
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="departamento">Departamento/Línea:</label>
+                    <input type="text" id="departamento" name="departamento" value="Wireline" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="motivo">Motivo del viaje:</label>
+                    <input type="text" id="motivo" name="motivo" value="Actividades WL" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lugarSalida">Lugar de salida:</label>
+                    <input type="text" id="lugarSalida" name="lugarSalida" value="Maturín" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lugarDestino">Lugar Destino:</label>
+                    <input type="text" id="lugarDestino" name="lugarDestino" value="El Tigre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="horaSalida">Hora de salida:</label>
+                    <input type="time" id="horaSalida" name="horaSalida" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="horaLlegada">Hora de llegada:</label>
+                    <input type="time" id="horaLlegada" name="horaLlegada" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="unidadPlaca">Unidad / Placa:</label>
 
-            <button type="button" class="btn" onclick="generarInforme()">Generar Mensaje</button>
-        </form>
+                    <select id="unidadPlaca" name="unidadPlaca" onchange="mostrarCampoPersonalizado()" required>
+                        <option value="Fortuner AA179EI">Fortuner (AA179EI)</option>
+                        <option value="Hilux (91WNAF)">Hilux 91WNAF</option>
+                        <option value="Tacoma CC357IJ">Tacoma CC357IJ</option>
+                        <option value="personalizado">Escribir otra...</option>
+                    </select>
 
-        <!-- Área de resultado para mostrar el mensaje generado -->
-        <div id="resultado" class="result"></div>
-        <button id="seleccionarTodo" class="btn" onclick="seleccionarTodo()">Copia el Mensaje</button>
-    </div>
+                    <input 
+                        type="text" 
+                        id="unidadPlacaPersonalizada" 
+                        name="unidadPlacaPersonalizada" 
+                        placeholder="Ingresa la unidad personalizada" 
+                        style="display:none;"
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="conductores">Conductor/es:</label>
+                    <input type="text" id="conductores" name="conductores" value="Adolfo Silva" required>
+                </div>
 
-    <script src="variables.js"></script>
-    <script src="script.js"></script>
-    <script src="generarMensaje.js"></script>
+                <div class="form-group">
+                    <label for="acompanantes">Acompañantes:</label>
+                    <input type="text" id="acompanantes" name="acompanantes" value="Roybert Arcia" required>
+                </div>
 
-</body>
+                <div class="form-group">
+                    <label for="ruta">RUTA:</label>
+                    <textarea 
+                        id="ruta" 
+                        name="ruta" 
+                        rows="3" 
+                        required>Maturín - El Furrial - Punta de Mata - Santa Barbara - Aguasay - San Tome - San Jose de Guanipa</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="paradas">PARADAS PROGRAMADAS:</label>
+                    <input type="text" id="paradas" name="paradas" value="Ninguna" required>
+                </div>
+
+                <!-- Sección de Evaluación de Riesgo -->
+                <h3>EVALUACIÓN DE RIESGO</h3>
+                <div class="form-group">
+                    <label for="kilometraje">Kilometraje recorrido:</label>
+                    <select id="kilometraje" name="kilometraje"></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="clima">Condiciones Climáticas:</label>
+                    <select id="clima" name="clima"></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="vehiculos">Vehículos más pasajeros:</label>
+                    <select id="vehiculos" name="vehiculos"></select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="vias">Condiciones de las vías:</label>
+                    <select id="vias" name="vias"></select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comunicacion">Comunicación disponible:</label>
+                    <select id="comunicacion" name="comunicacion"></select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="horas">Horas trabajadas más tiempo de viaje:</label>
+                    <select id="horas" name="horas"></select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="riesgo">Riesgo seguridad física del viaje:</label>
+                    <select id="riesgo" name="riesgo"></select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="horasViaje">Horas del viaje (Diurna o Nocturna):</label>
+                    <select id="horasViaje" name="horasViaje"></select>
+                </div>
+
+                <button type="button" class="btn" onclick="generarInforme()">Generar Mensaje</button>
+            </form>
+
+            <!-- Área de resultado para mostrar el mensaje generado -->
+            <div id="resultado" class="result"></div>
+            <button id="seleccionarTodo" class="btn" onclick="seleccionarTodo()">Copia el Mensaje</button>
+        </div>
+
+        <script src="variables.js"></script>
+        <script src="script.js"></script>
+        <script src="generarMensaje.js"></script>
+
+    </body>
 </html>
